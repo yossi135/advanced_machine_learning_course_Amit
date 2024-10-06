@@ -14,7 +14,8 @@ if len(email)==17:
      print(f'domain is  ***{domain}***')
     
      if domain_ending=='.com':
-        print(f'The domain ending is  ****{domain_ending}****')     
+        print('The domain ending is  ****commercial domain****')     
+        
      else:
         print(f'do not know this  ****{domain_ending}****')               
   else:
