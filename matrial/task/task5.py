@@ -21,7 +21,7 @@ def calculater(num1,num2,choose):
 while True:
     choose=input('Enter your choice (1,2,3,4,5) : ')
     if choose=='5':
-        print('********your exit from calculater******* ')   
+        print('********you exit from calculater******* ')   
         break
     elif choose in ['1','2','3','4']:
         num1=float(input('ENTER THE FIRST NUM: '))
