@@ -10,5 +10,5 @@ class calculater:
        return self.num1*self.num2
     def div(self):
        return self.num1/self.num2
-c1=calculater(6,7)
+c1=calculater(6,4)
 print(c1.sum())
