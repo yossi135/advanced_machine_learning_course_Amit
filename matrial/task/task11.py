@@ -17,5 +17,5 @@ premier_league_teams = ["Manchester City","Liverpool","Arsenal","Manchester Unit
 "West Ham United"]
              
 leage_1=leage(premier_league_teams) 
-print(leage_1.Premier_League())
+leage_1.Premier_League()
     
