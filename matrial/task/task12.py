@@ -10,10 +10,13 @@ class math_clss:
         return result   
 
      def isPrime(self):
-        for i in range(2, self.num1):
-          if self.num1 % i == 0:
-            return False
-        return True
+          if self.num1==1:
+               return '****error please enter num > 1****'
+          else:
+            for i in range(2, self.num1):
+              if self.num1 % i == 0:
+                return False
+          return True
  
 
      def dividors(self):
@@ -25,7 +28,7 @@ class math_clss:
           return common_dividors
      
 
-c2=math_clss(6,8)
+c2=math_clss(1,8)
 print(c2.factorial())
 print(c2.dividors())
 print(c2.isPrime())
