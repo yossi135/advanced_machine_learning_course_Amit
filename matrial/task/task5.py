@@ -24,11 +24,14 @@ while True:
         print('********You are out of the calculator******* ')   
         break
     elif choose in ['1','2','3','4']:
-        num1=float(input('ENTER THE FIRST NUM: '))
-        num2=float(input('ENTER THE SECOND NUM: '))
-        print(calculater(num1,num2,choose))
+       try: 
+          num1=float(input('ENTER THE FIRST NUM: '))
+          num2=float(input('ENTER THE SECOND NUM: '))
+          print(calculater(num1,num2,choose))
+       except ValueError:
+                         print('please enter number  ')
     else:
         print('ERROR NOT FOUND THIS CHOICE IN LIST')    
     question=input('Are you going to perform another calculation?? (yes Or no)').lower()
-    if question=='no':
+    if question=='no' or '':
         break         
