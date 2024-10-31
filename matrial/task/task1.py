@@ -1,25 +1,35 @@
-
-email=input('''please inter your email and contains to 17 (charaters)or(numbers)
-          such as(username@domain.domain ending) :  ''')
-if len(email)==17:
-    
-  count=str(email.count('@'))
-  if '.' in email and  count=='1':
-     print(f'this email ({email}) is valid ')
-     username=email[0:7]
-     domain=email[8:13]
-     domain_ending=email[13:17]
-
-     print(f'username is  ****{username}***')
-     print(f'domain is  ***{domain}***')
-    
-     if domain_ending=='.com':
-        print('The domain ending is  ****commercial domain****')     
+class bankAccount:
+    def __init__(self,balance) :
+        self.balance=balance
         
-     else:
-        print(f'do not know this  ****{domain_ending}****')               
-  else:
-   print(f'this email ({email}) is invalid')    
+    
+    def deposit(self,amount):
+          #nonlocal balance
+          self.balance += amount
+          print(f'Deposited {amount}. New balance: {self.balance}')
+
+    def withdraw(self,amount):
+           #nonlocal balance
+           if amount > self.balance:
+             print('Insufficient funds')
+           else:
+             self.balance -= amount
+             print(f'Withdrew {amount}. New balance: {self.balance}')
+
+    def check_balance(self):
+          print(f'Current balance: {self.balance}')
+
+      
+initial_balance=float(input('please enter initial balance: '))
+deposit_amount=float(input('please enter deposit amount: '))
+withdraw_amount=float(input('please enter withdraw amount: '))
+    
+if deposit_amount < 0 or withdraw_amount < 0:
+     print('****Error! Please enter a number greater than zero for deposit or withdraw amount.*****')
+
 else:
-    print('error!! please try again')   
-     
+    c1=bankAccount(initial_balance)
+    c1.deposit(deposit_amount)
+    c1.withdraw(withdraw_amount)
+    c1.check_balance()
+

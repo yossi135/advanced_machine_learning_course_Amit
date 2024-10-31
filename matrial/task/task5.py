@@ -1,37 +1,29 @@
-print('''Weloce to the simple calculator
-      select an operation 
-       1- addition(+)
-       2- subtraction(-)
-       3- multiplication(*)
-       4- divition(/)
-       5- exit
-      ---------------------------''')
-def calculater(num1,num2,choose):
-     if choose=='1':
-         return num1+num2
-     elif choose=='2':
-         return num1-num2
-     elif choose=='3':
-         return num1*num2
-     elif choose=='4':
-         if num2==0:
-             return 'Error: Division by zero is not allowed! '
-         else:
-              return num1/num2 
-while True:
-    choose=input('Enter your choice (1,2,3,4,5) : ')
-    if choose=='5':
-        print('********You are out of the calculator******* ')   
-        break
-    elif choose in ['1','2','3','4']:
-       try: 
-          num1=float(input('ENTER THE FIRST NUM: '))
-          num2=float(input('ENTER THE SECOND NUM: '))
-          print(calculater(num1,num2,choose))
-       except ValueError:
-                         print('please enter number  ')
-    else:
-        print('ERROR NOT FOUND THIS CHOICE IN LIST')    
-    question=input('Are you going to perform another calculation?? (yes Or no)').lower()
-    if question=='no' or '':
-        break         
+class read_file:
+    
+     def __init__(self,x):
+        self.x=x
+    
+    
+     def counter_word(self):
+      num_words=len(self.x.split())
+      return num_words
+    
+    
+     def counter_characters(self) :   
+       num_characters=len(self.x)
+       return num_characters
+
+
+     def counter_line(self) :   
+       num_line=self.x.count('\n')+1
+       return num_line
+   
+   
+file_path=r'C:\Users\A plus\Desktop\AMIT\advanced_machine_learning_course_Amit\matrial\task\fi.py'
+with open(file_path,'r') as file:
+    read=file.read()
+
+r1=read_file(read)
+print(f'number of characters is: {r1.counter_characters()}')
+print(f'number of lines is: {r1.counter_line()}')
+print(f'number of words is: {r1.counter_word()}')

@@ -1,10 +1,33 @@
-Encoded_message='##$$$@!yalpstcejorp EPUVT****9887'
-The_core_part=Encoded_message[7:25]
-first_word=Encoded_message[7:19]
-second_word=Encoded_message[20:25]
-reverse=first_word[ : :-1]
-replace1=second_word.replace('E','A')
-replace2=replace1.replace('U','O')
-print(f'''The core part is {The_core_part} 
-      the first word becomes {reverse} 
-      Final decoded message is {reverse}  {replace2} ''')
+from abc import ABC , abstractmethod
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+         pass
+     
+    def describe(self):
+        print("This is an animal.")
+         
+class Cow(Animal) :
+    
+    def make_sound(self):
+        return 'hooo'
+    
+class Dog(Animal):
+    
+    def make_sound(self):
+        return "Woof!"  
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow!"  
+    
+dog=Dog()
+cat=Cat()
+cow=Cow()
+
+dog.describe()
+print(dog.make_sound())
+cow.describe()
+print(cow.make_sound())
+cat.describe()
+print(cat.make_sound())
